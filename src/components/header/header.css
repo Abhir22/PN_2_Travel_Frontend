@@ -1,0 +1,218 @@
+/* Base Styles */
+.header {
+  background-color: #003580;
+  color: white;
+  display: flex;
+  justify-content: center;
+  padding: 20px 0 120px;
+  position: relative;
+}
+
+.headerContainer {
+  width: 100%;
+  max-width: 1024px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+/* Search Box */
+.headerSearch {
+  height: 60px;
+  background-color: white;
+  border: 3px solid #febb02;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 5px;
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+  position: absolute;
+  bottom: -30px;
+  left: 15px;
+  right: 15px;
+  z-index: 100;
+  box-sizing: border-box;
+}
+
+.headerSearchItem {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex: 1;
+  padding: 0 15px;
+  height: 100%;
+  border-right: 1px solid #e6e6e6;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.headerSearchItem:last-child {
+  border-right: none;
+}
+
+.headerIcon {
+  font-size: 20px;
+  color: #555;
+}
+
+.headerSearchInput {
+  border: none;
+  outline: none;
+  width: 100%;
+  font-size: 14px;
+  color: #333;
+  background: transparent;
+  cursor: pointer;
+}
+
+.headerSearchInput::placeholder {
+  color: #999;
+}
+
+.headerSearchText {
+  color: #666;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+/* Date Picker Styles */
+.datePickerDropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 101;
+  margin-top: 10px;
+}
+
+/* Guest Picker Styles */
+.guestPickerDropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: white;
+  padding: 15px;
+  border-radius: 5px;
+  box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+  z-index: 101;
+  margin-top: 10px;
+  width: 250px;
+}
+
+.guestOption {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.guestOption:last-child {
+  margin-bottom: 0;
+}
+
+.guestCounter {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.guestCounter button {
+  width: 30px;
+  height: 30px;
+  border: 1px solid #0071c2;
+  background: white;
+  color: #0071c2;
+  border-radius: 50%;
+  font-size: 16px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.guestCounter button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.guestCounter span {
+  min-width: 20px;
+  text-align: center;
+}
+
+/* Button Styles */
+.headerBtn {
+  background-color: #0071c2;
+  color: white;
+  font-weight: 600;
+  border: none;
+  padding: 0 20px;
+  height: 100%;
+  font-size: 16px;
+  transition: all 0.2s ease;
+  width: 100%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+  border-radius: 0 2px 2px 0;
+}
+
+.headerBtn:hover {
+  background-color: #0062a3;
+}
+
+/* Responsive Design */
+@media (max-width: 900px) {
+  .header {
+    padding-bottom: 220px;
+  }
+  
+  .headerSearch {
+    flex-direction: column;
+    height: auto;
+    bottom: -60px;
+  }
+  
+  .headerSearchItem {
+    width: 100%;
+    padding: 15px;
+    border-right: none;
+    border-bottom: 1px solid #e6e6e6;
+    height: auto;
+  }
+  
+  .headerSearchItem:last-child {
+    border-bottom: none;
+  }
+  
+  .headerBtn {
+    padding: 15px;
+    height: auto;
+    border-radius: 0 0 5px 5px;
+  }
+  
+  .datePickerDropdown,
+  .guestPickerDropdown {
+    position: static;
+    margin-top: 10px;
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .header {
+    padding-bottom: 240px;
+  }
+  
+  .headerSearch {
+    left: 10px;
+    right: 10px;
+  }
+  
+  .headerSearchText, 
+  .headerSearchInput {
+    font-size: 13px;
+  }
+}
